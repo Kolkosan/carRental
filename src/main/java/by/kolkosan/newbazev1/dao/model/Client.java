@@ -11,7 +11,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "client")
-public class Client extends Ent {
+public class Client extends Ent implements Comparable<Client> {
+    private String email;
     private String surname;
     private String name;
     private String patronymic;
@@ -24,4 +25,13 @@ public class Client extends Ent {
     @OneToOne(mappedBy = "client")
     private Pasport pasport;
 
+    @Override
+    public List<Car> getCar() {
+        return null;
+    }
+
+    @Override
+    public int compareTo(Client o) {
+        return 0;
+    }
 }

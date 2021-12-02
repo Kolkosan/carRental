@@ -19,6 +19,7 @@ public class Car extends Ent{
 
     private String stamp;
     private int code_car;
+    private String car_class;
     private String body_type;
     private String transmission;
     private int numbSeats;
@@ -40,6 +41,7 @@ public class Car extends Ent{
         return "Car{" +
                 "stamp='" + stamp + '\'' +
                 ", code_car=" + code_car +
+                ", car_class=" + car_class +
                 ", body_type='" + body_type + '\'' +
                 ", transmission='" + transmission + '\'' +
                 ", numbSeats=" + numbSeats +
@@ -51,5 +53,10 @@ public class Car extends Ent{
                 ", deposit=" + deposit +
                 ", comments='" + comments + '\'' +"\n"+
                 '}';
+    }
+
+    @Override
+    public List<Car> getCar() {
+        return null;
     }
 }

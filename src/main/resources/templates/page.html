@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+.table{
+    color:black;
+    font-size: 18px;
+}
+    </style>
 </head>
-<body>
-Hellow java
+<body bgcolor="#FFFACD" text="#FF0000" >
+<font size="6">
+    <h1> Заголовок </h1>
+    <h6> Заголовоке №2 </h6>
+    <img th:src="@{/photo/me.jpg}" width="640" height="481" alt="Это я">
+    <p> <u> Подчеркнул текст) </u> </p>
+    <a href="https://github.com/Kolkosan">
+        <strong> my GitHub </strong>
+    </a>
+    <p> <s> Теперь переходим на таблицу </s> </p>
+
+    <table width="50%" border="1" align="Center">
+
+        <tr align="Center">
+
+            <td class="table">1 строка 1 столбец </td>
+            <td>2 строка 1 столбец</td>
+
+        </tr>
+        <tr align="Center">
+            <td >2 строка 2 столбец </td>
+            <td class="table">2 строка 2 столбец</td>
+        </tr>
+    </table>
+    <p><strong> Теперь список </strong></p>
+    <ul>
+        <li type="disc">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <p> <u> 2 список </u> </p>
+    <ol type="A">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <ul type="circle">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ul type="square">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+
+
+<p th:utext="#{test.message(${name})}"></p>
 </body>
+
 </html>

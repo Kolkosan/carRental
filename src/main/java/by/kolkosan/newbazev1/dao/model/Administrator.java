@@ -21,4 +21,9 @@ public class Administrator extends Ent{
 
     @OneToMany(mappedBy = "administrator")
     private List<Application> application;
+
+    @Override
+    public List<Car> getCar() {
+        return null;
+    }
 }

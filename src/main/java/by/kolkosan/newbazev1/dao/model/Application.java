@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -39,5 +40,10 @@ public class Application extends Ent{
     @ManyToOne
     @JoinColumn(name = "id_client")
     private Client client;
+
+    @Override
+    public List<Car> getCar() {
+        return null;
+    }
 
 }

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -20,4 +21,8 @@ public class Pasport extends Ent{
     @JoinColumn(name = "id",referencedColumnName = "id")
     private Client client;
 
+    @Override
+    public List<Car> getCar() {
+        return null;
+    }
 }
