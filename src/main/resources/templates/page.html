@@ -8,6 +8,9 @@
     color:black;
     font-size: 18px;
 }
+.red{
+    background-color: red;
+}
     </style>
 </head>
 <body bgcolor="#FFFACD" text="#FF0000" >
@@ -61,6 +64,25 @@
 
 
 <p th:utext="#{test.message(${name})}"></p>
+
+
+    <p th:utext="#{test.message (${name})}"></p>
+    <table>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отчество</th>
+        <th>Email</th>
+        <th>Телефон</th>
+        <th>Адрес</th>
+        <tr th:each="man : ${#lists.sort(client)}" th:class="${client.telephone==null}? 'red': ''">
+            <div th:if="${client.id} != 6">
+                <td>
+                    <a th:href="@{|/user/${client.id}|}" th:text="${client.name}"></a>
+                </td>
+                <td th:text="${manStat.even}?'Четное':'Нечтное'"></td>
+            </div>
+        </tr>
+
 </body>
 
 </html>

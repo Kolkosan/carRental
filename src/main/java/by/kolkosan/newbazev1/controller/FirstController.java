@@ -2,6 +2,7 @@ package by.kolkosan.newbazev1.controller;
 
 
 import by.kolkosan.newbazev1.dao.model.Application;
+import by.kolkosan.newbazev1.dao.model.Client;
 import by.kolkosan.newbazev1.dao.repository.AdministratorRepository;
 import by.kolkosan.newbazev1.dao.repository.ApplicationRepository;
 import by.kolkosan.newbazev1.dao.repository.CarRepository;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -35,6 +37,11 @@ public class FirstController {
         this.applicationRepository = applicationRepository;
         this.clientRepository = clientRepository;
         this.clientService = clientService;
+    }
+
+    @ModelAttribute("client")
+    public List<Client> getLexa(){
+        return clientService.findAll();
     }
 
 
